@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Switch } from "react-router-dom";
+import NewCenotePage from './pages/NewCenote'
+import AllCenotesPage from "./pages/AllCenotes";
+import OneCenotePage from "./pages/OneCenote";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Switch>
+        <Route path="/" exact>
+          <h1>Login</h1>
+        </Route>
+        <Route path="/cenotes" exact>
+          <AllCenotesPage />
+        </Route>
+        <Route path="/cenotes/:id">
+          <OneCenotePage />
+        </Route>
+        <Route path="/new-cenote">
+          <NewCenotePage />
+        </Route>
+        <Route path="/user" exact>
+          <h1>Ver usuario</h1>
+        </Route>
+        <Route path="/user/:id">
+          <h1>Ver usuario</h1>
+        </Route>
+        <Route path="/new-user">
+          <h1>Agregar usuario</h1>
+        </Route>
+      </Switch>
     </div>
   );
 }
