@@ -9,7 +9,7 @@ function CenoteItem(props) {
       <Card>
         <Link to={link}>
         <div>
-          <img src={props.photos} alt={props.name} />
+          <img className={classes.imgcenote} src={props.photos} alt={props.name} />
         </div>
         <div>
           <h3>{props.name}</h3>

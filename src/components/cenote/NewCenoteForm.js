@@ -33,19 +33,21 @@ function NewCenoteForm(props) {
   }
 
   return (
-    <div>
-      <form onSubmit={submitHandler}>
+    <div className={classes.divcentrar}>
+      
+      <form onSubmit={submitHandler} className={classes.card}>
+      <h1>Agregar nuevo cenote</h1>
         <div>
           <label htmlFor="name">Nombre del cenote</label>
-          <input type="text" id="title" ref={nameInputRef} required />
+          <input className={classes.inputs} type="text" id="title" ref={nameInputRef} required />
         </div>
         <div>
           <label htmlFor="location">Ubicación del cenote</label>
-          <input type="url" id="location" ref={locationInputRef} required />
+          <input className={classes.inputs} type="url" id="location" ref={locationInputRef} required />
         </div>
         <div>
           <label htmlFor="photo">Foto del cenote</label>
-          <input type="url" id="photo" ref={photoInputRef} required />
+          <input className={classes.inputs} type="url" id="photo" ref={photoInputRef} required />
         </div>
         <div>
           <label htmlFor="bath">Baño</label>
@@ -54,7 +56,7 @@ function NewCenoteForm(props) {
         </div>
         <div>
           <label htmlFor="road">Camino</label>
-          <select name="road" id="road" ref={roadInputRef} required>
+          <select className={classes.inputs} name="road" id="road" ref={roadInputRef} required>
             <option value="No pasan coches">No pasan coches</option>
             <option value="Terraceria">Terraceria</option>
             <option value="Pavimentado">Pavimentado</option>
@@ -62,10 +64,10 @@ function NewCenoteForm(props) {
         </div>
         <div>
           <label htmlFor="cost">costo</label>
-          <input type="number" id="cost" ref={costInputRef} required />
+          <input className={classes.inputs} type="number" id="cost" ref={costInputRef} required />
         </div>
         <div>
-          <button>Agregar Cenote</button>
+          <button className={classes.btnCreate}>Agregar Cenote</button>
         </div>
       </form>
     </div>

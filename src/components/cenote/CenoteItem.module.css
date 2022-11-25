@@ -1,0 +1,11 @@
+.imgcenote {
+    border-radius: 5px 5px 0 0;
+    width:200px;
+    height: 200px;
+    display: flex;
+    align-self: center;
+}
+
+li{
+    list-style:none 
+}

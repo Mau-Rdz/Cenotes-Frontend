@@ -20,7 +20,6 @@ function NewCenotePage(){
     }
     return (
     <section>
-        <h1>Agregar nuevo cenote</h1>
         <NewCenoteForm onAddCenote={addCenoteHandler} />
     </section>
     )

@@ -38,9 +38,12 @@ function AllCenotesPage(){
       return (
         <section>
           <h1>All Cenotes Page</h1>
+          <a><input className={"btnNuevo"} type={"button"} value="Registrar un cenote nuevo"></input></a>
           {console.log(loadedCenotes)}
           <CenoteList cenotes={loadedCenotes} />
+          
         </section>
+        
       );
 }
 
