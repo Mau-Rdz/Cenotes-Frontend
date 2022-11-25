@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import ReviewItem from "../components/reviews/ReviewItem";
 
 function OneCenotePage(props) {
   let { id } = useParams();
@@ -32,7 +33,16 @@ function OneCenotePage(props) {
     );
   }
 
-  return <div>Cenote especifico aquí hacemos diseño mamalon tienes todos los datos dentro de loadedCenote</div>;
+  return <div>Cenote especifico aquí hacemos diseño mamalon tienes todos los datos dentro de loadedCenote. Loaded cenote ya incluye los comentarios, usa un map para recorrerlos y les creas un reviewItem a cada uno, puede ver como aqui abajo
+    {/* {loadedCenote.reviews.map((review) =>{
+      return <ReviewItem
+      autor = {review.autor}
+      comentario = {review.comentario}
+      calificacion = {review.calificacion}
+      />
+    })} */}
+    
+  </div>;
 }
 
 export default OneCenotePage;

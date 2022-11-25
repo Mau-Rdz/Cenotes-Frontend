@@ -1,15 +1,15 @@
 import { useHistory } from "react-router-dom";
 
-import NewCenoteForm from "../components/cenote/NewCenoteForm";
+import NewUserForm from "../components/user/NewUserForm";
 
-function NewCenotePage(){
+function NewUserPage(){
     const history = useHistory();
-    function addCenoteHandler(cenoteData){
+    function addUserHandler(userData){
         fetch(
-            "https://react-project-aa147-default-rtdb.firebaseio.com/cenotes.json",
+            "https://react-project-aa147-default-rtdb.firebaseio.com/users.json",
             {
                 method: "POST",
-                body: JSON.stringify(cenoteData),
+                body: JSON.stringify(userData),
                 headers: {
                     "Content-type": "aplication/json",
                 },
@@ -20,9 +20,9 @@ function NewCenotePage(){
     }
     return (
     <section>
-        <NewCenoteForm onAddCenote={addCenoteHandler} />
+        <NewUserForm onAddUser={addUserHandler} />
     </section>
     )
 }
 
-export default NewCenotePage;
+export default NewUserPage;

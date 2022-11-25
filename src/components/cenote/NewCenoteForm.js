@@ -39,7 +39,7 @@ function NewCenoteForm(props) {
       <h1>Agregar nuevo cenote</h1>
         <div>
           <label htmlFor="name">Nombre del cenote</label>
-          <input className={classes.inputs} type="text" id="title" ref={nameInputRef} required />
+          <input className={classes.inputs} type="text" id="name" ref={nameInputRef} required />
         </div>
         <div>
           <label htmlFor="location">Ubicación del cenote</label>
