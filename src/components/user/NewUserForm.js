@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import classes from "./NewUserForm.module.css";
 
 function NewCenoteForm(props) {
   const nameInputRef = useRef();
@@ -28,36 +29,39 @@ function NewCenoteForm(props) {
   }
 
   return (
-    <div>
-      <form onSubmit={submitHandler}>
-        <h1>Agregar nuevo cenote</h1>
-        <div>
+    <div className={classes.divcentrar}>
+      <form onSubmit={submitHandler} className={classes.card}>
+        <h1>Crear cuenta</h1>
+        <div className={classes.divsInputs} >
           <label htmlFor="name">Nombre del usuario</label>
-          <input type="text" id="name" ref={nameInputRef} required />
+          <input className={classes.inputs} type="text" id="name" ref={nameInputRef} required />
         </div>
-        <div>
-          <label htmlFor="description">descripción del usuario</label>
-          <input
+        <div className={classes.divsInputs}>
+          <label htmlFor="description">Descripción del usuario</label>
+          <input className={classes.inputs}
             type="text"
             id="description"
             ref={descriptionInputRef}
             required
           />
         </div>
-        <div>
+        <div className={classes.divsInputs}>
           <label htmlFor="photo">Foto del usuario</label>
-          <input type="url" id="photo" ref={photoInputRef} required />
+          <input className={classes.inputs} type="url" id="photo" ref={photoInputRef} required />
         </div>
-        <div>
+        <div className={classes.divsInputs}>
+          <br></br>
           <label htmlFor="email">Correo</label>
-          <input type="email" id="email" ref={emailInputRef} required />
+          <br></br>
+          <input className={classes.inputs} type="email" id="email" ref={emailInputRef} required />
         </div>
-        <div>
+        <div className={classes.divsInputs}>
           <label htmlFor="pass">Contraseña</label>
-          <input type="password" id="pass" ref={passwordInputRef} required />
+          <br></br>
+          <input className={classes.inputs} type="password" id="pass" ref={passwordInputRef} required />
         </div>
-        <div>
-          <button>Agregar Cenote</button>
+        <div className={classes.divsInputs}>
+          <button className={classes.btnCreate} >Crear cuenta</button>
         </div>
       </form>
     </div>

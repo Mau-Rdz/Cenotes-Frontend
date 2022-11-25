@@ -1,34 +1,34 @@
-body{
-    background-color: cornflowerblue;
-}
-
 .inputs {
-    width: 80%;
+    width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    
 }
 
 .card {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
     border-radius: 5px;
     align-items: center;
-    width: fit-content;
+    width: 50%;
     text-align: center;
     display: flex;
     flex-direction: column;
     background-color: white;
     margin-bottom: 50px;
+    justify-content: center;
+}
+
+.divsInputs{
+    width: 70%;
 }
 
 .divcentrar{
     width: 100%;
     display: flex;
-    
     justify-content: center;
 }
 
@@ -47,44 +47,4 @@ body{
     color: white;
     border: none;
     
-}
-.divInput{
-
-    width: 100%;
-
-}
-
-.fileselect {
-    position: relative;
-    display: inline-block;
-    width: 70%;
-    height: 3rem;
-    text-align: center;
-    border-radius: 4px;
-}
-
-.fileselect::before {
-    width: 100%;
-    padding: 10px;
-    height: 2rem;
-    background-color: #5678EF;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 3px;
-    content: 'Seleccionar foto'; /* texto por defecto */
-}
-
-.fileselect:hover{
-    background-color: #5678EF;
-    opacity: 70%;
-}
-
-
-.fileselect input[type="file"] {
-    opacity: 0;
-    width: 100%;
-    height: 3rem;
-    display: inline-block;
 }
