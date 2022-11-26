@@ -1,4 +1,5 @@
 import { Route, Switch } from "react-router-dom";
+import LoginPage from "./pages/Login";
 import NewCenotePage from "./pages/NewCenote";
 import AllCenotesPage from "./pages/AllCenotes";
 import OneCenotePage from "./pages/OneCenote";
@@ -8,31 +9,39 @@ import NewUserPage from "./pages/NewUser";
 function App() {
   return (
     <div>
-      <Layout>
       <Switch>
         <Route path="/" exact>
-          <h1>Login</h1>
+          <LoginPage />
         </Route>
-          <Route path="/cenotes" exact>
+        <Route path="/cenotes" exact>
+          <Layout>
             <AllCenotesPage />
-          </Route>
-          <Route path="/cenotes/:id">
+          </Layout>
+        </Route>
+        <Route path="/cenotes/:id">
+          <Layout>
             <OneCenotePage />
-          </Route>
-          <Route path="/new-cenote">
+          </Layout>
+        </Route>
+        <Route path="/new-cenote">
+          <Layout>
             <NewCenotePage />
-          </Route>
-          <Route path="/user/:id">
+          </Layout>
+        </Route>
+        <Route path="/user/:id">
+          <Layout>
             <h1>Ver usuario</h1>
-          </Route>
-          <Route path="/new-user">
-            <NewUserPage />
-          </Route>
-          <Route path="/new-review">
+          </Layout>
+        </Route>
+        <Route path="/new-user">
+          <NewUserPage />
+        </Route>
+        <Route path="/new-review">
+          <Layout>
             <h1>Agregar review</h1>
-          </Route>
+          </Layout>
+        </Route>
       </Switch>
-      </Layout>
     </div>
   );
 }
