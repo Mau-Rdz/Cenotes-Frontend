@@ -8,7 +8,7 @@ function LoginUserForm(props) {
   function submitHandler(event) {
     event.preventDefault();
 
-    const enteredemail = emailInputRef.current.checked;
+    const enteredemail = emailInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
 
     const userData = {

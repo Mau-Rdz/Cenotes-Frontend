@@ -1,15 +1,21 @@
-import { Link } from "react";
+import { Link } from "react-router-dom";
 import classes from "./MainNavigation.module.css";
 
 function MainNavigation(props) {
-  function buttonHandler() {}
+  const link = "/";
+  function buttonHandler() {
+    localStorage.clear()
+    window.location.reload(false)
+  }
   return (
     <header>
       <div>
         <nav>
           <ul>
             <li>
-              <h3>{props.name}</h3>
+              <Link to={link}>
+                <h3>{props.name}</h3>
+              </Link>
             </li>
             <li>
               <button onClick={buttonHandler}>

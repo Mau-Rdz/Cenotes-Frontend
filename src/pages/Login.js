@@ -2,21 +2,33 @@ import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import LoginUserForm from "../components/user/LoginUserForm";
 
-function LoginPage() {
+function LoginPage(props) {
   const history = useHistory();
   function logUserHandler(userData) {
     fetch(
-      "https://react-project-aa147-default-rtdb.firebaseio.com/cuentas.json",
+      "http://3.228.7.193:1340/api/v1/auth/login",
       {
         method: "POST",
-        body: JSON.stringify(userData),
         headers: {
-          "Content-type": "aplication/json",
+          "Content-Type": "application/json",
         },
+        body: JSON.stringify(userData),
       }
-    ).then(() => {
-      history.replace("/cenotes");
-    });
+    )
+      .then((response) => {
+        console.log(response)
+        return response.json();
+      })
+      .then((data) => {
+        const token = data.auth_token;
+        const id = data.data._id
+        props.SetToken(token);
+        props.SetId(id);
+        
+      })
+      .then(() => {
+        window.location.reload(false)
+      });
   }
   const link = "/new-user";
   return (

@@ -8,18 +8,18 @@ function AllCenotesPage(){
     useEffect(() => {
         setIsLoading(true);
         fetch(
-          "https://react-project-aa147-default-rtdb.firebaseio.com/cenotes.json"
+          "http://3.228.7.193:1340/api/v1/cenotes/"
         )
           .then((response) => {
             return response.json();
           })
           .then((data) => {
+            const infoData = data.data
             const cenotes = [];
-    
-            for (const key in data) {
+            for (const key in infoData) {
               const cenote = {
-                id: key,
-                ...data[key],
+                id: infoData[key]._id,
+                ...infoData[key],
               };
               cenotes.push(cenote);
             }
@@ -38,7 +38,6 @@ function AllCenotesPage(){
       return (
         <section>
           
-          {console.log(loadedCenotes)}
           <CenoteList cenotes={loadedCenotes} />
           
         </section>
