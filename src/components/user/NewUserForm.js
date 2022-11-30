@@ -12,7 +12,7 @@ function NewCenoteForm(props) {
 
     const enteredName = nameInputRef.current.value;
     const enteredImage = photoInputRef.current.value || null;
-    const enteredemail = emailInputRef.current.checked;
+    const enteredemail = emailInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
     const userData = {
       name: enteredName,

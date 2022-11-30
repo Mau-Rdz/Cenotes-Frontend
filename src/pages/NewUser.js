@@ -1,21 +1,21 @@
 import { useHistory } from "react-router-dom";
-
 import NewUserForm from "../components/user/NewUserForm";
 
 function NewUserPage(){
     const history = useHistory();
     function addUserHandler(userData){
         fetch(
-            "https://react-project-aa147-default-rtdb.firebaseio.com/users.json",
+            "http://3.228.7.193:1340/api/v1/auth/signin",
             {
                 method: "POST",
                 body: JSON.stringify(userData),
                 headers: {
-                    "Content-type": "aplication/json",
+                    "Content-type": "application/json",
                 },
             }
-        ).then(() =>{
-            history.replace("/cenotes");
+        )
+        .then(() =>{
+            history.replace("/");
         }); 
     }
     return (
