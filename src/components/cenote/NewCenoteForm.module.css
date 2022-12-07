@@ -1,6 +1,3 @@
-body{
-    background-color: cornflowerblue;
-}
 
 .inputs {
     width: 80%;
@@ -67,18 +64,10 @@ body{
     width: 100%;
     padding: 10px;
     height: 2rem;
-    background-color: #5678EF;
-    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 3px;
-    content: 'Seleccionar foto'; /* texto por defecto */
-}
-
-.fileselect:hover{
-    background-color: #5678EF;
-    opacity: 70%;
 }
 
 

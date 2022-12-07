@@ -53,7 +53,6 @@ function NewCenoteForm(props) {
         </div>
         <div className={classes.divInput}>
           <br></br>
-          <br></br>
           <label htmlFor="bath">Baño</label>
           <br></br>
           <input type="radio" name="bath" required /> No

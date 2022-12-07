@@ -1,5 +1,7 @@
 import { useRef } from "react";
+import Form from 'react-bootstrap/Form';
 import classes from "./NewUserForm.module.css";
+import { Link } from "react-router-dom";
 
 function NewCenoteForm(props) {
   const nameInputRef = useRef();
@@ -14,13 +16,13 @@ function NewCenoteForm(props) {
     const enteredImage = photoInputRef.current.value || null;
     const enteredemail = emailInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
-    const userData = {
+    let userData = {
       name: enteredName,
       email: enteredemail,
       password: enteredPassword,
     };
     if (enteredImage !== null) {
-      const userData = {
+      userData = {
         name: enteredName,
         photo: enteredImage,
         email: enteredemail,
@@ -31,6 +33,7 @@ function NewCenoteForm(props) {
     props.onAddUser(userData);
   }
 
+  const link = "/";
   return (
     <div className={classes.divcentrar}>
       <form onSubmit={submitHandler} className={classes.card}>
@@ -43,15 +46,6 @@ function NewCenoteForm(props) {
             id="name"
             ref={nameInputRef}
             required
-          />
-        </div>
-        <div className={classes.divsInputs}>
-          <label htmlFor="photo">Foto del usuario</label>
-          <input
-            className={classes.inputs}
-            type="url"
-            id="photo"
-            ref={photoInputRef}
           />
         </div>
         <div className={classes.divsInputs}>
@@ -78,8 +72,31 @@ function NewCenoteForm(props) {
           />
         </div>
         <div className={classes.divsInputs}>
+          <label htmlFor="photo">Foto del usuario</label>
+          <br></br>
+          <br></br>
+          <div className={classes.divcentrar}>
+          <input
+            controlId="formFile"
+            className="mb-3"
+            type="file"
+            id="photo"
+            ref={photoInputRef}
+            accept="image/png  ,image/jpeg"
+          />
+          </div>
+        </div>
+        <div className={classes.divsInputs}>
           <button className={classes.btnCreate}>Crear cuenta</button>
         </div>
+        <section>
+          <div>
+            <p>Si ya tienes cuenta</p>
+            <Link to={link} className={classes.links} >
+              <p>Ingresa aquí</p>
+            </Link>
+          </div>
+        </section>
       </form>
     </div>
   );

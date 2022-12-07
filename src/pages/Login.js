@@ -1,9 +1,6 @@
-import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
 import LoginUserForm from "../components/user/LoginUserForm";
 
 function LoginPage(props) {
-  const history = useHistory();
   function logUserHandler(userData) {
     fetch(
       "http://3.228.7.193:1340/api/v1/auth/login",
@@ -30,16 +27,9 @@ function LoginPage(props) {
         window.location.reload(false)
       });
   }
-  const link = "/new-user";
   return (
     <section>
       <LoginUserForm onLoginUser={logUserHandler} />
-      <div>
-        <p>Si no tienes cuenta</p>
-        <Link to={link}>
-          <p>Ingresa aquí</p>
-        </Link>
-      </div>
     </section>
   );
 }

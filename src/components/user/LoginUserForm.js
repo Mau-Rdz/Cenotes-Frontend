@@ -1,5 +1,6 @@
 import classes from "./LoginUserForm.module.css";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 function LoginUserForm(props) {
   const emailInputRef = useRef();
@@ -18,6 +19,7 @@ function LoginUserForm(props) {
 
     props.onLoginUser(userData);
   }
+  const link = "/new-user";
   return (
     <div className={classes.divcentrar}>
       <form onSubmit={submitHandler} className={classes.card}>
@@ -47,6 +49,13 @@ function LoginUserForm(props) {
         </div>
         <div className={classes.divsInputs}>
           <button className={classes.btnCreate}>Iniciar Sesión</button>
+        </div>
+
+        <div>
+          <p>Si no tienes cuenta</p>
+          <Link to={link} className={classes.links}>
+            <p>Ingresa aquí</p>
+          </Link>
         </div>
       </form>
     </div>

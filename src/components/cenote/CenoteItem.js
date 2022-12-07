@@ -7,12 +7,12 @@ function CenoteItem(props) {
   return (
     <li>
       <Card>
-        <Link to={link}>
+        <Link to={link} className={classes.linkTxt}>
         <div>
           <img className={classes.imgcenote} src={props.photos} alt={props.name} />
         </div>
         <div>
-          <h3>{props.name}</h3>
+          <h2>{props.name}</h2>
           <p>{props.description}</p>
         </div>
         </Link>

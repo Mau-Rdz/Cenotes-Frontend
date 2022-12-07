@@ -4,8 +4,18 @@
     height: 200px;
     display: flex;
     align-self: center;
+   
 }
 
 li{
     list-style:none 
+}
+
+.linkTxt{
+    text-decoration: none;
+    color: darkolivegreen;
+}
+
+h2{
+    font-size: medium;
 }

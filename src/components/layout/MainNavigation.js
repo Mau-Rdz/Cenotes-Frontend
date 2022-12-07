@@ -5,21 +5,21 @@ function MainNavigation(props) {
   const link = "/";
   function buttonHandler() {
     localStorage.clear()
-    window.location.reload(false)
+    window.location.replace("/")
   }
   return (
     <header>
       <div>
         <nav>
-          <ul>
-            <li>
-              <Link to={link}>
+          <ul className={classes.lista}>
+            <li className={classes.li}>
+              <Link to={link} className={classes.links}>
                 <h3>{props.name}</h3>
               </Link>
             </li>
-            <li>
-              <button onClick={buttonHandler}>
-                Boton que hace cosas si lo presionas
+            <li className={classes.liLogout}>
+              <button className={classes.btnLogout} onClick={buttonHandler}>
+                Cerrar sesión
               </button>
             </li>
           </ul>
