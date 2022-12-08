@@ -11,7 +11,7 @@ function CenoteList(props) {
             id={cenote.id}
             name={cenote.name}
             location={cenote.location}
-            photos={cenote.photos}
+            photo={cenote.photo}
             reviews={cenote.reviews}
             bath={cenote.bathrooms}
             road={cenote.road}
