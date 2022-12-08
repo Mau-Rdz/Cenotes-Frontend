@@ -17,8 +17,8 @@ function NewCenotePage(){
                 },
             }
         ).then(() =>{
-            console.log(cenoteData)
-            // history.replace("/cenotes");
+            // console.log(cenoteData)
+            history.replace("/cenotes");
         }); 
     }
     return (
