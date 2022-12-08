@@ -14,18 +14,18 @@
     transition: 0.3s;
     border-radius: 5px;
     align-items: center;
-    width: fit-content;
+    width:max-content;
     text-align: center;
     display: flex;
     flex-direction: column;
     background-color: white;
+    margin-top: 10px;
     margin-bottom: 50px;
 }
 
 .divcentrar{
     width: 100%;
     display: flex;
-    
     justify-content: center;
 }
 
@@ -55,7 +55,7 @@
     position: relative;
     display: inline-block;
     width: 70%;
-    height: 3rem;
+    height: 5rem;
     text-align: center;
     border-radius: 4px;
 }
@@ -63,7 +63,7 @@
 .fileselect::before {
     width: 100%;
     padding: 10px;
-    height: 2rem;
+    height: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,6 +74,6 @@
 .fileselect input[type="file"] {
     opacity: 0;
     width: 100%;
-    height: 3rem;
+    height: 5rem;
     display: inline-block;
 }

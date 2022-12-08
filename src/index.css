@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url("https://www.mexicodesconocido.com.mx/wp-content/uploads/2021/12/homun29.jpg");
-  background-repeat: no-repeat;
+  background-attachment:fixed;
   background-size: 100%;
 }
 

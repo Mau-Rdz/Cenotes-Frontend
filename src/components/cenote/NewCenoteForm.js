@@ -66,6 +66,7 @@ function NewCenoteForm(props) {
           <br></br>
           <input
             className={classes.fileselect}
+            /* name="photo" */
             type="file"
             multiple
             id="photo"

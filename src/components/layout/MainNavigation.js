@@ -14,7 +14,7 @@ function MainNavigation(props) {
         <nav>
           <ul className={classes.lista}>
             <li className={classes.li}>
-              <Link to={linkLogo} className={classes.links}>
+              <Link to={linkLogo} className={classes.home}>
                 <h3>{props.name}</h3>
               </Link>
             </li>

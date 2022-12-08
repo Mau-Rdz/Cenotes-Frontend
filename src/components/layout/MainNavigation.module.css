@@ -16,6 +16,7 @@
 }
 
 .links{
+  color:#0AAD51;
   text-decoration: none;
 }
 
@@ -25,6 +26,19 @@
 
 .links:hover{
   text-decoration: underline;
+}
+
+.home{
+  text-decoration: none;
+  color: aquamarine;
+}
+
+.home:visited{
+  color:darkcyan
+}
+
+.home:hover{
+  text-decoration:underline;
 }
 
 .liLogout {
