@@ -26,68 +26,22 @@ function OneCenotePage(props) {
         setLoadedCenote(cenote);
         setIsLoading(false);
       });
-  }, [id]);
-  if (isLoading) {
-    return (
-      <section>
-        <p>Loading...</p>
-      </section>
-    );
-  }
+  }, []);
   const link = "/new-review/" + loadedCenote._id + "/" + Id;
   return (
-    <div >
-      
+    <div>
       <div className={classes.divCentrar}>
-        <Carousel variant="dark" slide={false}>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="https://www.thewholeworldisaplayground.com/wp-content/uploads/2020/11/Cenotes-Cancun.jpg"
-          alt="First slide"
-        />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="https://estaticos.muyinteresante.es/uploads/images/article/62f4bdee5bafe85a049c6414/Cenote.Sambula.jpg"
-          alt="Second slide"
-        />
-
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="https://rivieramaya.mx/fotos/2015/03/cenotes-riviera-maya-cancun.jpg"
-          alt="Third slide"
-        />
-
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
-      {/* NO BORRAR DANI ESTO ES PARA LOS REVIEWS */}
-      {/* <ReviewList /> */}
+        <h3>{loadedCenote.name}</h3>
+        <img src={loadedCenote.photos} />
+        {/* NO BORRAR DANI ESTO ES PARA LOS REVIEWS */}
+        {/* <ReviewList list={loadedReviews} /> */}
       </div>
       <div>
-        <Link to={link} className="btn btn-primary" href="#" role="button" >
+        <Link to={link} className="btn btn-primary" href="#" role="button">
           Agregar review
         </Link>
       </div>
     </div>
   );
 }
-
 export default OneCenotePage;

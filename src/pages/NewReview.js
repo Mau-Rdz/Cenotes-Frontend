@@ -18,8 +18,8 @@ function NewReviewPage(){
                 },
             }
         ).then((response) =>{
-            // history.replace("/cenotes/"+cenoteId);
-            console.log(response)
+            history.replace("/cenotes/"+cenoteId);
+            // console.log(response)
         });
     }
     return (
