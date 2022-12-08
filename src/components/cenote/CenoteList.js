@@ -1,4 +1,3 @@
-import classes from "./CenoteList.module.css";
 import CenoteItem from "./CenoteItem";
 
 function CenoteList(props) {
@@ -11,7 +10,7 @@ function CenoteList(props) {
             id={cenote.id}
             name={cenote.name}
             location={cenote.location}
-            photo={cenote.photo}
+            photo={cenote.photos}
             reviews={cenote.reviews}
             bath={cenote.bathrooms}
             road={cenote.road}

@@ -37,18 +37,6 @@ function NewCenoteForm(props) {
         cenoteData.append("photo", file);
       }
     }
-    // console.log(cenoteData)
-    
-    // const cenoteData = {
-    //   name: enteredName,
-    //   location: enteredLocation,
-    //   bathrooms: enteredBath,
-    //   road: enteredRoad,
-    //   cost: enteredCost,
-    // };
-    // if (photo.length !== 0) {
-    //   cenoteData.photo = photo;
-    // }
     props.onAddCenote(cenoteData);
   }
 

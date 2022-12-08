@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import ReviewItem from "../components/reviews/ReviewItem";
 import Carousel from "react-bootstrap/Carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
 import classes from "../components/ui/OneCenote.module.css";
 import UseId from "../components/App/UseId";
+import ReviewList from "../components/reviews/ReviewList";
 
 function OneCenotePage(props) {
   let { id } = useParams();
@@ -35,7 +35,6 @@ function OneCenotePage(props) {
     );
   }
   const link = "/new-review/" + loadedCenote._id + "/" + Id;
-
   return (
     <div >
       
@@ -79,7 +78,8 @@ function OneCenotePage(props) {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
-
+      {/* NO BORRAR DANI ESTO ES PARA LOS REVIEWS */}
+      {/* <ReviewList /> */}
       </div>
       <div>
         <Link to={link} className="btn btn-primary" href="#" role="button" >

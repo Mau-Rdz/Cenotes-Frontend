@@ -8,10 +8,10 @@ const link = '/users/'+props.autor.id
       <Card>
         <div>
             <Link to={link}>
-            <h3>{props.autor.name}</h3>
+            <h3>{props.autor}</h3>
             </Link>
             <p>{props.comentario}</p>
-            <p>{props.calificacion}</p>
+            <p>{props.score}</p>
         </div>
       </Card>
     </li>
