@@ -10,14 +10,15 @@ function NewCenotePage(){
             "http://3.228.7.193:1340/api/v1/cenotes/",
             {
                 method: "POST",
-                body: JSON.stringify(cenoteData),
+                body: cenoteData,
                 headers: {
-                    "Content-type": "application/json",
+                    // "Content-Type": "multipart/form-data",
                     "auth-token": token
                 },
             }
         ).then(() =>{
-            history.replace("/cenotes");
+            console.log(cenoteData)
+            // history.replace("/cenotes");
         }); 
     }
     return (

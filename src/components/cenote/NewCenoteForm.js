@@ -4,7 +4,7 @@ import classes from "./NewCenoteForm.module.css";
 function NewCenoteForm(props) {
   const nameInputRef = useRef();
   const locationInputRef = useRef();
-  const [ photo, setPhoto ] = useState([]);
+  const [photo, setPhoto] = useState([]);
   const bathInputRef = useRef();
   const roadInputRef = useRef();
   const costInputRef = useRef();
@@ -17,28 +17,44 @@ function NewCenoteForm(props) {
     event.preventDefault();
 
     const enteredName = nameInputRef.current.value;
-    const enteredLocation = locationInputRef.current.value;    
+    const enteredLocation = locationInputRef.current.value;
     const enteredBath = bathInputRef.current.checked;
     const enteredRoad = roadInputRef.current.value;
     const enteredCost = costInputRef.current.value;
-
-    const cenoteData = {
-      name: enteredName,
-      location: enteredLocation,
-      bathrooms: enteredBath,
-      road: enteredRoad,
-      cost: enteredCost,
-    };
-    if(photo.length !== 0){
-      cenoteData.photo = photo
+    var cenoteData = new FormData();
+    cenoteData.append("name",enteredName);
+    cenoteData.append("location",enteredLocation);
+    if(enteredBath === true){
+    cenoteData.append("bathrooms",true);
     }
+    else{
+    cenoteData.append("bathrooms",false);
+    }
+    cenoteData.append("road",enteredRoad);
+    cenoteData.append("cost",parseInt(enteredCost));
+    if(photo.length !== 0 ){
+      for (const file of photo) {
+        cenoteData.append("photo", file);
+      }
+    }
+    // console.log(cenoteData)
     
-    props.onAddCenote(cenoteData)
+    // const cenoteData = {
+    //   name: enteredName,
+    //   location: enteredLocation,
+    //   bathrooms: enteredBath,
+    //   road: enteredRoad,
+    //   cost: enteredCost,
+    // };
+    // if (photo.length !== 0) {
+    //   cenoteData.photo = photo;
+    // }
+    props.onAddCenote(cenoteData);
   }
 
   return (
     <div className={classes.divcentrar}>
-      <form onSubmit={submitHandler} className={classes.card}>
+      <form onSubmit={submitHandler} className={classes.card} encType="multipart/form-data">
         <h1>Agregar nuevo cenote</h1>
         <div className={classes.divInput}>
           <label htmlFor="name">Nombre del cenote</label>
