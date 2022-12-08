@@ -38,11 +38,7 @@ function OneCenotePage(props) {
 
   return (
     <div >
-      <div>
-        <Link to={link} class="btn btn-primary" href="#" role="button" >
-          Agregar review
-        </Link>
-      </div>
+      
       <div className={classes.divCentrar}>
         <Carousel variant="dark" slide={false}>
       <Carousel.Item>
@@ -85,7 +81,11 @@ function OneCenotePage(props) {
     </Carousel>
 
       </div>
-      
+      <div>
+        <Link to={link} className="btn btn-primary" href="#" role="button" >
+          Agregar review
+        </Link>
+      </div>
     </div>
   );
 }
