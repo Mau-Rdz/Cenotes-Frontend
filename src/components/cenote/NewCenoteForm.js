@@ -84,7 +84,6 @@ function NewCenoteForm(props) {
             className={classes.fileselect}
             /* name="photo" */
             type="file"
-            multiple
             id="photo"
             onChange={handleFileEvent}
             accept="image/png  ,image/jpeg"
