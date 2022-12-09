@@ -18,7 +18,7 @@ function NewReviewPage(){
                 },
             }
         ).then((response) =>{
-            history.replace("/cenotes/"+cenoteId);
+            history.replace("/cenotes/");
             // console.log(response)
         });
     }
