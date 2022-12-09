@@ -1,4 +1,4 @@
-import { Link } from 'react';
+import { Link } from 'react-router-dom';
 import Card from "../ui/Card";
 
 function ReviewItem(props) {
