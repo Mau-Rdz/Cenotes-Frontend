@@ -1,8 +1,8 @@
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import NewUserForm from "../components/user/NewUserForm";
 
 function NewUserPage(){
-    const history = useHistory();
+    const navigate = useNavigate();
     function addUserHandler(userData){
         fetch(
             "http://44.204.131.75:1340/api/v1/auth/signin",
@@ -15,7 +15,7 @@ function NewUserPage(){
             }
         )
         .then(() =>{
-            history.replace("/");
+            navigate("/");
         }); 
     }
     return (

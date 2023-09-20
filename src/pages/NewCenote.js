@@ -1,10 +1,10 @@
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import UseToken from "../components/App/UseToken";
 import NewCenoteForm from "../components/cenote/NewCenoteForm";
 
 function NewCenotePage(){
     const { token, setToken } = UseToken();
-    const history = useHistory();
+    const navigate = useNavigate();
     function addCenoteHandler(cenoteData){
         fetch(
             "http://44.204.131.75:1340/api/v1/cenotes/",
@@ -18,7 +18,7 @@ function NewCenotePage(){
             }
         ).then(() =>{
             // console.log(cenoteData)
-            history.replace("/cenotes");
+            navigate("/cenotes");
         }); 
     }
     return (

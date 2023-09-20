@@ -1,30 +1,33 @@
 import { Link } from "react-router-dom";
-import classes from "./MainNavigation.module.css";
+import { useNavigate }  from "react-router-dom";
+import "./MainNavigation.css";
 
-function MainNavigation(props) {
-  const linkLogo = "/";
-  const linkAgregar = "/new-cenote"
-  function buttonHandler() {
-    localStorage.clear()
-    window.location.replace("/")
-  }
+function MainNavigation({name, deleteToken, deleteId}) {
+  const navigate = useNavigate();
+
   return (
-    <header>
-      <div>
-        <nav>
-          <ul className={classes.lista}>
-            <li className={classes.li}>
-              <Link to={linkLogo} className={classes.home}>
-                <h3>{props.name}</h3>
+    <header className="header">
+      <div className="base">
+        <nav className="navegador">
+          <ul className="lista">
+            <li className="liHome">
+              <Link to="/" className="home">
+                <h3 className="">{name}</h3>
               </Link>
             </li>
-            <li className={classes.li}>
-              <Link to={linkAgregar} className={classes.links}>
+            <li className="liAdd">
+              <Link to="/new-cenote" className="links">
                 <h3>Agregar cenote</h3>
               </Link>
             </li>
-            <li className={classes.liLogout}>
-              <button className={classes.btnLogout} onClick={buttonHandler}>
+            </ul>
+          <ul className="ulButton">
+            <li className="liLogout">
+              <button className="btnLogout" onClick={() => {
+                deleteToken()
+                deleteId()
+                navigate("/")
+                }}>
                 Cerrar sesión
               </button>
             </li>

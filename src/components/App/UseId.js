@@ -14,7 +14,13 @@ export default function UseId() {
     setId(userId.id);
   };
 
+  const deleteId = () => {
+    localStorage.removeItem('Id');
+    setId(null);
+  }
+
   return {
+    deleteId,
     setId: saveId,
     Id
   }

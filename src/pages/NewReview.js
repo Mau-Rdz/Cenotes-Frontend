@@ -1,11 +1,11 @@
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import NewReviewForm from "../components/reviews/NewReviewForm";
 import useToken from "../components/App/UseToken";
 
 function NewReviewPage(){
     let { idCenote, idUser } = useParams();
     const { token, setToken } = useToken();
-    const history = useHistory();
+    const navigate = useNavigate();
     function addReviewHandler(reviewData){
         fetch(
             "http://44.204.131.75:1340/api/v1/reviews/" + idCenote + "/" + idUser,
@@ -18,7 +18,7 @@ function NewReviewPage(){
                 },
             }
         ).then((response) =>{
-            history.replace("/cenotes/");
+            navigate("/cenotes/");
             // console.log(response)
         });
     }

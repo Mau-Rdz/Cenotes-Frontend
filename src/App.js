@@ -1,4 +1,4 @@
-import { Route, Switch } from "react-router-dom";
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import LoginPage from "./pages/Login";
 import NewCenotePage from "./pages/NewCenote";
 import AllCenotesPage from "./pages/AllCenotes";
@@ -12,61 +12,31 @@ import NewReviewPage from "./pages/NewReview";
 
 function App() {
 
-  const { token, setToken } = UseToken();
-  const { id, setId } = UseId();
-  if (!token) {
-    return (
-      <div>
-        <Switch>
-          <Route path="/" exact>
-            <LoginPage SetToken={setToken} SetId={setId} />
-          </Route>
-          <Route path="/new-user">
-            <NewUserPage />
-          </Route>
-        </Switch>
-      </div>
-    );
-  }
-
+  const { token, setToken, deleteToken } = UseToken();
+  const { id, setId, deleteId } = UseId();
+  
   return (
-    <div>
-      <Switch>
-        <Route path="/" exact>
-          <Layout>
-            <AllCenotesPage />
-          </Layout>
-        </Route>
-        <Route path="/cenotes" exact>
-          <Layout>
-            <AllCenotesPage />
-          </Layout>
-        </Route>
-        <Route path="/cenotes/:id">
-          <Layout>
-            <OneCenotePage />
-          </Layout>
-        </Route>
-        <Route path="/new-cenote">
-          <Layout>
-            <NewCenotePage />
-          </Layout>
-        </Route>
-        <Route path="/user/:id">
-          <Layout>
-            <h1>Ver usuario</h1>
-          </Layout>
-        </Route>
-        {/* <Route path="/new-user">
-          <NewUserPage />
-        </Route> */}
-        <Route path="/new-review/:idCenote/:idUser">
-          <Layout>
-            <NewReviewPage />
-          </Layout>
-        </Route>
-      </Switch>
-    </div>
+      <Router>
+        {token !== null ? (
+          <>
+            <Layout deleteToken={deleteToken} deleteId={deleteId}/>
+              <Routes>
+                <Route path="/" exact element={<AllCenotesPage />}/>
+                <Route path="/cenotes" exact element={ <AllCenotesPage />}/>
+                <Route path="/cenotes/:id" element={<OneCenotePage />}/>
+                <Route path="/new-cenote" element={<NewCenotePage />}/>
+                <Route path="/user/:id" element={<h1>Ver usuario</h1>}/>
+                <Route path="/new-review/:idCenote/:idUser" element={<NewReviewPage />}/>
+              </Routes>
+          </>
+        ) : (
+          <Routes>
+            <Route path="/" exact element={<LoginPage setToken={setToken} setId={setId} />}/>
+            <Route path="/new-user" element={<NewUserPage />}/>
+          </Routes>
+          )
+        }
+        </Router>
   );
 }
 

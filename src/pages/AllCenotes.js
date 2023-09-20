@@ -37,9 +37,7 @@ function AllCenotesPage(){
       }
       return (
         <section>
-          
           <CenoteList cenotes={loadedCenotes} />
-          
         </section>
         
       );

@@ -1,0 +1,90 @@
+/* Styling for the header */
+header {
+  background-color: #333; /* Background color for the header */
+  padding: 10px 0; /* Add some vertical padding */
+  color: #fff; /* Text color for the header */
+}
+
+/* Styling for the navigation container */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Styling for the navigation list */
+ul {
+  list-style: none;
+  display: flex;
+  gap: 20px; /* Adjust the space between list items */
+  margin: 0;
+  padding: 0;
+  margin-left: 2rem;
+}
+.ulButton {
+  list-style: none;
+  display: flex;
+  gap: 20px; /* Adjust the space between list items */
+  margin: 0;
+  padding: 0;
+  margin-left: auto; /* Move the button to the right */
+  margin-right: 2rem; /* Move the button to the right */
+}
+
+/* Styling for list items */
+li {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styling for links */
+a {
+  text-decoration: none;
+  color: #fff; /* Link text color */
+}
+
+/* Styling for the home link */
+.home {
+  font-size: 24px; /* Adjust the font size as needed */
+}
+
+/* Styling for the "Agregar cenote" link */
+.links {
+  font-size: 20px; /* Adjust the font size as needed */
+}
+
+h3 {
+  margin: auto;
+}
+
+/* Styling for the "Cerrar sesión" button */
+/* Styling for the "Cerrar sesión" button */
+.btnLogout {
+  background-color: #f44336; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none;
+  padding: 10px 20px; /* Adjust padding as needed */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+  font-size: 18px; /* Adjust the font size as needed */
+  margin-left: auto; /* Move the button to the right */
+}
+
+.btnLogout:hover {
+  background-color: #d32f2f; /* Hover background color */
+}
+
+
+
+
+/* Adjust the styles for different screen sizes as needed */
+@media (max-width: 768px) {
+  /* Example: Mobile-specific styles */
+  ul {
+    flex-direction: column;
+  }
+}

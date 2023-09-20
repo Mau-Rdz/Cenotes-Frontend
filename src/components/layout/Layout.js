@@ -1,11 +1,9 @@
 import MainNavigation from "./MainNavigation";
-import classes from "./Layout.module.css";
 
-function Layout(props) {
+function Layout({deleteToken, deleteId}) {
   return (
     <div>
-      <MainNavigation name='Cenotes mayas'/>
-      <main>{props.children}</main>
+      <MainNavigation deleteToken={deleteToken} deleteId={deleteId} name='Cenotes mayas'/>
     </div>
   );
 }
