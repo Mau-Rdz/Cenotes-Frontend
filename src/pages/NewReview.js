@@ -8,7 +8,7 @@ function NewReviewPage(){
     const history = useHistory();
     function addReviewHandler(reviewData){
         fetch(
-            "http://3.228.7.193:1340/api/v1/reviews/" + idCenote + "/" + idUser,
+            "http://44.204.131.75:1340/api/v1/reviews/" + idCenote + "/" + idUser,
             {
                 method: "POST",
                 body: JSON.stringify(reviewData),

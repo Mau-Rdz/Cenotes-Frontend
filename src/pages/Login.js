@@ -3,7 +3,7 @@ import LoginUserForm from "../components/user/LoginUserForm";
 function LoginPage(props) {
   function logUserHandler(userData) {
     fetch(
-      "http://3.228.7.193:1340/api/v1/auth/login",
+      "http://44.204.131.75:1340/api/v1/auth/login",
       {
         method: "POST",
         headers: {

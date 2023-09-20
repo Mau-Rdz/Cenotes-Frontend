@@ -5,7 +5,7 @@ function NewUserPage(){
     const history = useHistory();
     function addUserHandler(userData){
         fetch(
-            "http://3.228.7.193:1340/api/v1/auth/signin",
+            "http://44.204.131.75:1340/api/v1/auth/signin",
             {
                 method: "POST",
                 body: JSON.stringify(userData),

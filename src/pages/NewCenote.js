@@ -7,7 +7,7 @@ function NewCenotePage(){
     const history = useHistory();
     function addCenoteHandler(cenoteData){
         fetch(
-            "http://3.228.7.193:1340/api/v1/cenotes/",
+            "http://44.204.131.75:1340/api/v1/cenotes/",
             {
                 method: "POST",
                 body: cenoteData,
