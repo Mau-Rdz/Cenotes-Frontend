@@ -1,9 +1,10 @@
 import CenoteItem from "./CenoteItem";
+import "./CenoteList.css"
 
-function CenoteList(props) {
+function CenoteList({cenotes}) {
   return (
-    <ul>
-      {props.cenotes.map((cenote) => {
+    <ul className="ulCard">
+      {cenotes.map((cenote) => {
         return (
           <CenoteItem
             key={cenote.id}

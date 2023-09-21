@@ -1,0 +1,16 @@
+.ulCard {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: space-between; /* Distribute space between items */
+    list-style: none;
+    padding: 0;
+    margin: 30px;
+  }
+  
+  /* Adjust the width of each CenoteItem to fit 5 in a row */
+  .ulCard > li {
+    width: calc(20% - 10px); /* 20% to fit 5 items in a row with 10px spacing */
+    margin: 5px; /* Adjust the spacing between items as needed */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+  }
+  

@@ -13,7 +13,7 @@ import NewReviewPage from "./pages/NewReview";
 function App() {
 
   const { token, setToken, deleteToken } = UseToken();
-  const { id, setId, deleteId } = UseId();
+  const { setId, deleteId } = UseId();
   
   return (
       <Router>

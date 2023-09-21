@@ -1,5 +1,4 @@
 import ReviewItem from "./ReviewItem";
-import { useState, useEffect } from "react";
 
 function ReviewList(props) {
     return (

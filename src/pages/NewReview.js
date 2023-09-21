@@ -4,7 +4,7 @@ import useToken from "../components/App/UseToken";
 
 function NewReviewPage(){
     let { idCenote, idUser } = useParams();
-    const { token, setToken } = useToken();
+    const { token } = useToken();
     const navigate = useNavigate();
     function addReviewHandler(reviewData){
         fetch(

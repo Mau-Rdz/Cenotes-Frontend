@@ -1,22 +1,20 @@
 import { Link } from "react-router-dom";
-import classes from "./CenoteItem.module.css";
-import Card from "../ui/Card";
+import "./CenoteItem.css";
 
-function CenoteItem(props) {
-  const link = "/cenotes/"+props.id
+function CenoteItem({id, photo, name, description}) {
   return (
-    <li>
-      <Card>
-        <Link to={link} className={classes.linkTxt}>
-        <div>
-          <img className={classes.imgcenote} src={props.photo} alt={props.name} />
+    <li className="liCard">
+      <div className="card">
+        <Link to={`/cenotes/${id}`} className="">
+        <div className="divCenoteImg">
+          <img className="cenoteImg" src={photo} alt={name} />
         </div>
-        <div>
-          <h2>{props.name}</h2>
-          <p>{props.description}</p>
+        <div className="data">
+          <h2 className="name">{name}</h2>
+          <p className="description">{description}</p>
         </div>
         </Link>
-      </Card>
+      </div>
     </li>
   );
 }

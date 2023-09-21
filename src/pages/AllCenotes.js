@@ -14,6 +14,7 @@ function AllCenotesPage(){
             return response.json();
           })
           .then((data) => {
+            console.log(data)
             const infoData = data.data
             const cenotes = [];
             for (const key in infoData) {

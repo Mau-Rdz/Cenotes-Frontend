@@ -4,6 +4,7 @@ import classes from "./NewCenoteForm.module.css";
 function NewCenoteForm(props) {
   const nameInputRef = useRef();
   const locationInputRef = useRef();
+  const descriptionInputRef = useRef();
   const [photo, setPhoto] = useState([]);
   const bathInputRef = useRef();
   const roadInputRef = useRef();
@@ -18,12 +19,14 @@ function NewCenoteForm(props) {
 
     const enteredName = nameInputRef.current.value;
     const enteredLocation = locationInputRef.current.value;
+    const enteredDescription = descriptionInputRef.current.value;
     const enteredBath = bathInputRef.current.checked;
     const enteredRoad = roadInputRef.current.value;
     const enteredCost = costInputRef.current.value;
     var cenoteData = new FormData();
     cenoteData.append("name",enteredName);
     cenoteData.append("location",enteredLocation);
+    cenoteData.append("description",enteredDescription);
     if(enteredBath === true){
     cenoteData.append("bathrooms",true);
     }
@@ -58,9 +61,19 @@ function NewCenoteForm(props) {
           <label htmlFor="location">Ubicación del cenote</label>
           <input
             className={classes.inputs}
-            type="url"
+            type="text"
             id="location"
             ref={locationInputRef}
+            required
+          />
+        </div>
+        <div className={classes.divInput}>
+          <label htmlFor="description">Descripción del cenote</label>
+          <input
+            className={classes.inputs}
+            type="text"
+            id="description"
+            ref={descriptionInputRef}
             required
           />
         </div>

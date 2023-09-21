@@ -3,7 +3,7 @@ import UseToken from "../components/App/UseToken";
 import NewCenoteForm from "../components/cenote/NewCenoteForm";
 
 function NewCenotePage(){
-    const { token, setToken } = UseToken();
+    const { token } = UseToken();
     const navigate = useNavigate();
     function addCenoteHandler(cenoteData){
         fetch(
