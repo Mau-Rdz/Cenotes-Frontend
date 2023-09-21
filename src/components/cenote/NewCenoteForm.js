@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import classes from "./NewCenoteForm.module.css";
+import "./NewCenoteForm.css";
 
 function NewCenoteForm(props) {
   const nameInputRef = useRef();
@@ -44,45 +44,45 @@ function NewCenoteForm(props) {
   }
 
   return (
-    <div className={classes.divcentrar}>
-      <form onSubmit={submitHandler} className={classes.card} encType="multipart/form-data">
-        <h1>Agregar nuevo cenote</h1>
-        <div className={classes.divInput}>
+    <div className="divcentrar">
+      <form onSubmit={submitHandler} className="card" encType="multipart/form-data">
+        <h1 className="titulo">Agregar nuevo cenote</h1>
+        <div className="divInput">
           <label htmlFor="name">Nombre del cenote</label>
           <input
-            className={classes.inputs}
+            className="inputs"
             type="text"
             id="name"
             ref={nameInputRef}
             required
           />
         </div>
-        <div className={classes.divInput}>
+        <div className="divInput">
           <label htmlFor="location">Ubicación del cenote</label>
           <input
-            className={classes.inputs}
+            className="inputs"
             type="text"
             id="location"
             ref={locationInputRef}
             required
           />
         </div>
-        <div className={classes.divInput}>
+        <div className="divInput">
           <label htmlFor="description">Descripción del cenote</label>
           <input
-            className={classes.inputs}
+            className="inputs"
             type="text"
             id="description"
             ref={descriptionInputRef}
             required
           />
         </div>
-        <div className={classes.divInput}>
+        <div className="divInput">
           <label htmlFor="photo">Foto del cenote</label>
           <br></br>
           <br></br>
           <input
-            className={classes.fileselect}
+            className="fileselect"
             /* name="photo" */
             type="file"
             id="photo"
@@ -90,19 +90,19 @@ function NewCenoteForm(props) {
             accept="image/png  ,image/jpeg"
           />
         </div>
-        <div className={classes.divInput}>
+        <div className="divInput">
           <br></br>
           <label htmlFor="bath">Baño</label>
           <br></br>
           <input type="radio" name="bath" required /> No
           <input type="radio" name="bath" required ref={bathInputRef} /> Sí
         </div>
-        <div className={classes.divInput}>
+        <div className="divInput">
           <br></br>
           <label htmlFor="road">Camino</label>
           <br></br>
           <select
-            className={classes.inputs}
+            className="inputs"
             name="road"
             id="road"
             ref={roadInputRef}
@@ -117,7 +117,7 @@ function NewCenoteForm(props) {
           <label htmlFor="cost">Precio</label>
           <br></br>
           <input
-            className={classes.inputs}
+            className="inputs"
             type="number"
             id="cost"
             ref={costInputRef}
@@ -126,7 +126,7 @@ function NewCenoteForm(props) {
         </div>
         <div>
           <br></br>
-          <button className={classes.btnCreate}>Agregar Cenote</button>
+          <button className="btnCreate">Agregar Cenote</button>
         </div>
       </form>
     </div>

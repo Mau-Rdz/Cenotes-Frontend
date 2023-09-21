@@ -19,7 +19,6 @@ function NewReviewPage(){
             }
         ).then((response) =>{
             navigate("/cenotes/");
-            // console.log(response)
         });
     }
     return (

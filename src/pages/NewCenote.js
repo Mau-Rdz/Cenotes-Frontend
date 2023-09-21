@@ -17,7 +17,6 @@ function NewCenotePage(){
                 },
             }
         ).then(() =>{
-            // console.log(cenoteData)
             navigate("/cenotes");
         }); 
     }

@@ -28,8 +28,6 @@ function OneCenotePage() {
       <div className={classes.divCentrar}>
         <h3>{loadedCenote.name}</h3>
         <img src={loadedCenote.photos} alt="cenote foto" />
-        {/* NO BORRAR DANI ESTO ES PARA LOS REVIEWS */}
-        {/* <ReviewList list={loadedReviews} /> */}
       </div>
       <div>
         <Link to={link} className="btn btn-primary" href="#" role="button">
