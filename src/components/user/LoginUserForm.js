@@ -1,4 +1,4 @@
-import classes from "./LoginUserForm.module.css";
+import "./LoginUserForm.css";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 
@@ -21,39 +21,39 @@ function LoginUserForm(props) {
   }
   const link = "/new-user";
   return (
-    <div className={classes.divcentrar}>
-      <form onSubmit={submitHandler} className={classes.card}>
-        <h1>Inicio de Sesión</h1>
-        <div className={classes.divsInputs}>
+    <div className="divcentrar">
+      <form onSubmit={submitHandler} className="card">
+        <h1 className="titulo">Inicio de Sesión</h1>
+        <div className="divsInputs">
           <br></br>
           <label htmlFor="email">Correo</label>
           <br></br>
           <input
-            className={classes.inputs}
+            className="inputs"
             type="email"
             id="email"
             ref={emailInputRef}
             required
           />
         </div>
-        <div className={classes.divsInputs}>
+        <div className="divsInputs">
           <label htmlFor="pass">Contraseña</label>
           <br></br>
           <input
-            className={classes.inputs}
+            className="inputs"
             type="password"
             id="pass"
             ref={passwordInputRef}
             required
           />
         </div>
-        <div className={classes.divsInputs}>
-          <button className={classes.btnCreate}>Iniciar Sesión</button>
+        <div className="divsInputs">
+          <button className="btnCreate">Iniciar Sesión</button>
         </div>
 
         <div>
           <p>Si no tienes cuenta</p>
-          <Link to={link} className={classes.links}>
+          <Link to={link} className="links">
             <p>Ingresa aquí</p>
           </Link>
         </div>

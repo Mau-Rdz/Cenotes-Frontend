@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import classes from "./NewUserForm.module.css";
+import "./NewUserForm.css";
 import { Link } from "react-router-dom";
 
 function NewCenoteForm(props) {
@@ -34,47 +34,47 @@ function NewCenoteForm(props) {
 
   const link = "/";
   return (
-    <div className={classes.divcentrar}>
-      <form onSubmit={submitHandler} className={classes.card}>
+    <div className="divcentrar">
+      <form onSubmit={submitHandler} className="card">
         <h1>Crear cuenta</h1>
-        <div className={classes.divsInputs}>
+        <div className="divsInputs">
           <label htmlFor="name">Nombre del usuario</label>
           <input
-            className={classes.inputs}
+            className="inputs"
             type="text"
             id="name"
             ref={nameInputRef}
             required
           />
         </div>
-        <div className={classes.divsInputs}>
+        <div className="divsInputs">
           <br></br>
           <label htmlFor="email">Correo</label>
           <br></br>
           <input
-            className={classes.inputs}
+            className="inputs"
             type="email"
             id="email"
             ref={emailInputRef}
             required
           />
         </div>
-        <div className={classes.divsInputs}>
+        <div className="divsInputs">
           <label htmlFor="pass">Contraseña</label>
           <br></br>
           <input
-            className={classes.inputs}
+            className="inputs"
             type="password"
             id="pass"
             ref={passwordInputRef}
             required
           />
         </div>
-        <div className={classes.divsInputs}>
+        <div className="divsInputs">
           <label htmlFor="photo">Foto del usuario</label>
           <br></br>
           <br></br>
-          <div className={classes.divcentrar}>
+          <div className="divcentrar">
           <input
             controlId="formFile"
             className="mb-3"
@@ -85,13 +85,13 @@ function NewCenoteForm(props) {
           />
           </div>
         </div>
-        <div className={classes.divsInputs}>
-          <button className={classes.btnCreate}>Crear cuenta</button>
+        <div className="divsInputs">
+          <button className="btnCreate">Crear cuenta</button>
         </div>
         <section>
           <div>
             <p>Si ya tienes cuenta</p>
-            <Link to={link} className={classes.links} >
+            <Link to={link} className="links">
               <p>Ingresa aquí</p>
             </Link>
           </div>
