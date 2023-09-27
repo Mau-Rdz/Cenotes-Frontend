@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import "./NewCenoteForm.css";
+import { useHistory, useLocation } from "react-router-dom";
 
 function NewCenoteForm(props) {
   const nameInputRef = useRef();
@@ -9,6 +10,8 @@ function NewCenoteForm(props) {
   const bathInputRef = useRef();
   const roadInputRef = useRef();
   const costInputRef = useRef();
+  const navigate = useLocation();
+
 
   const handleFileEvent = (e) => {
     setPhoto(e.target.files);
@@ -24,23 +27,25 @@ function NewCenoteForm(props) {
     const enteredRoad = roadInputRef.current.value;
     const enteredCost = costInputRef.current.value;
     var cenoteData = new FormData();
-    cenoteData.append("name",enteredName);
-    cenoteData.append("location",enteredLocation);
-    cenoteData.append("description",enteredDescription);
-    if(enteredBath === true){
-    cenoteData.append("bathrooms",true);
+    cenoteData.append("name", enteredName);
+    cenoteData.append("location", enteredLocation);
+    cenoteData.append("description", enteredDescription);
+    if (enteredBath === true) {
+      cenoteData.append("bathrooms", true);
     }
-    else{
-    cenoteData.append("bathrooms",false);
+    else {
+      cenoteData.append("bathrooms", false);
     }
-    cenoteData.append("road",enteredRoad);
-    cenoteData.append("cost",parseInt(enteredCost));
-    if(photo.length !== 0 ){
+    cenoteData.append("road", enteredRoad);
+    cenoteData.append("cost", parseInt(enteredCost));
+    if (photo.length !== 0) {
       for (const file of photo) {
         cenoteData.append("photo", file);
       }
     }
     props.onAddCenote(cenoteData);
+    navigate("/")
+
   }
 
   return (
