@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import classes from "./NewReviewForm.module.css";
+import "./NewReviewForm.css";
 
 function NewReviewForm(props) {
   const commentInputRef = useRef();
@@ -20,24 +20,24 @@ function NewReviewForm(props) {
   }
 
   return (
-    <div className={classes.divcentrar}>
-      <form onSubmit={submitHandler} className={classes.card}>
+    <div className="divcentrar">
+      <form onSubmit={submitHandler} className="card">
         <h1>Agregar nueva review</h1>
-        <div className={classes.divInput}>
+        <div className="divInput">
           <label htmlFor="comment">Comentario</label>
           <input
-            className={classes.inputs}
+            className="inputs"
             type="textarea"
             id="comment"
             ref={commentInputRef}
             required
           />
         </div>
-        <div className={classes.divInput}>
+        <div className="divInput">
           <label htmlFor="score">Calificación</label>
           <input
-            className={classes.inputs}
-            type="range"
+            className="inputs"
+            type="number"
             id="score"
             ref={scoreInputRef}
             min="1"
@@ -49,7 +49,7 @@ function NewReviewForm(props) {
         </div>
         <div>
           <br></br>
-          <button className={classes.btnCreate}>Agregar Review</button>
+          <button className="btnCreate">Agregar Review</button>
         </div>
       </form>
     </div>

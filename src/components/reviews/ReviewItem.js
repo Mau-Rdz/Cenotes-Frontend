@@ -1,19 +1,13 @@
-import { Link } from 'react-router-dom';
-import Card from "../ui/Card";
+import "../reviews/ReviewItem.css"
 
-function ReviewItem(props) {
-const link = '/users/'+props.autor.id
+function ReviewItem({autor,comment, score}) {
+const link = '/users/'+autor
   return (
     <li>
-      <Card>
-        <div>
-            <Link to={link}>
-            <h3>{props.autor}</h3>
-            </Link>
-            <p>{props.comentario}</p>
-            <p>{props.score}</p>
-        </div>
-      </Card>
+      <div class="card">
+        <p class="comment">{comment}</p>
+        <p class="score">{score}</p>
+      </div>
     </li>
   );
 }

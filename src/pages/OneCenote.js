@@ -47,7 +47,7 @@ function OneCenotePage() {
         </Link>
       </div>
       <div>
-        <ReviewList reviews={loadedCenote.reviews} id={loadedCenote._id} />
+        <ReviewList id={loadedCenote._id} />
       </div>
       </>
       ) : (
