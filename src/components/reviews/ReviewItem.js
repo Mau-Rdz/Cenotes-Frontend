@@ -4,7 +4,7 @@ function ReviewItem({autor,comment, score}) {
 const link = '/users/'+autor
   return (
     <li>
-      <div class="card">
+      <div class="cardss">
         <p class="comment">{comment}</p>
         <p class="score">{score}</p>
       </div>

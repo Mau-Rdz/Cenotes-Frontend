@@ -21,7 +21,7 @@ function NewReviewForm(props) {
 
   return (
     <div className="divcentrar">
-      <form onSubmit={submitHandler} className="card">
+      <form onSubmit={submitHandler} className="cards">
         <h1>Agregar nueva review</h1>
         <div className="divInput">
           <label htmlFor="comment">Comentario</label>
